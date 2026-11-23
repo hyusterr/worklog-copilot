@@ -1,0 +1,29 @@
+-------
+## 2026.7.13
+### Stage of my work
+literature review
+### Things done today
+- [2.5 hr] Studied "numeracy in embeddings" survey
+- [2   hr] Studied the retrieval benchmark paper
+### TODOs
+
+### Need to discuss
+None
+-------
+## 2026.7.8
+### Stage of my work
+literature review
+### Things done today
+- [3 hr] Studied anisotropy papers
+### Current understanding (my own words, may be imprecise)
+- embeddings of numbers cluster together, so cosine similarity cannot tell 10 from 1000
+### Need to discuss
+None
+-------
+## 2026.7.7
+### Stage of my work
+literature review
+### Things done today
+- [4 hr] Studied knowledge editing paper, still confused about the null-space projection
+### Need to discuss
+- Could we go through the projection derivation in the next meeting?

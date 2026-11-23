@@ -1,0 +1,9 @@
+{"case": "B1 limit hidden in 'Things done'", "author": "amber", "week": "2026-07-13", "blockers": [["rate limit", "quota"]]}
+{"case": "B2 reproduction gap", "author": "amber", "week": "2026-07-13", "blockers": [["3 points lower", "tokenizer"]]}
+{"case": "B3 parser failure + resource request", "author": "chloe", "week": "2026-07-13", "blockers": [["nested tables", "HTML parser"], ["GPU", "memory"]]}
+{"case": "B4 needs annotators", "author": "chloe", "week": "2026-07-13", "blockers": [["annotate"]]}
+{"case": "B5 confusion written in 'Things done'", "author": "bowen", "week": "2026-07-06", "blockers": [["projection", "null-space"]]}
+{"case": "A1 gap of several weekdays", "author": "bowen", "week": "2026-07-13", "alerts": ["連續 4 天"]}
+{"case": "A2 no logs at all this week", "author": "bowen", "week": "2026-07-20", "alerts": ["沒有任何日誌"]}
+{"case": "A3 normal week, no false alarm", "author": "chloe", "week": "2026-07-13", "no_alerts": true}
+{"case": "A4 multi-day entries count as covered", "author": "amber", "week": "2026-07-13", "no_alerts": true}

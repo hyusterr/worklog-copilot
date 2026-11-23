@@ -1,0 +1,37 @@
+--------
+## 2026.7.17
+### Stage of my work
+building the evaluation pipeline
+### Things done today
+- [3 hr] wrote the evaluation script for the sentiment baseline
+- [1 hr] tried to run the LLM labeler but hit the API rate limit after 200 samples
+### TODOs
+- batch the requests and retry tomorrow
+### Need to discuss
+- Is there a lab API key with higher quota?
+--------
+## 2026.7.15 - 2026.7.16
+### Stage of my work
+building the evaluation pipeline
+### Things done today
+- [4 hr] cleaned the earnings-call dataset, removed table footnotes
+- [2 hr] reproduced last year's baseline, F1 is 3 points lower than the paper
+### TODOs
+- check whether the tokenizer version differs
+### Need to discuss
+- None
+--------
+## 2026.7.14
+### Stage of my work
+reading
+### Things done today
+- [2 hr] read the baseline paper section 3
+- [1 hr] meeting with mentor
+### TODOs (July 15)
+- start data cleaning
+### Need to discuss
+- Should we keep the duplicated transcripts or drop them?
+--------
+## 2026.7.X
+### Things done today
+- set up the conda environment

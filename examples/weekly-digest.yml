@@ -1,0 +1,50 @@
+# Copy to .github/workflows/weekly-digest.yml in the repo that hosts the tool.
+# Variables:
+#   LOG_REPO           owner/name of the repo that holds the work logs
+# Secrets:
+#   LOGS_TOKEN         fine-grained PAT with "Contents: read" on the log repos
+#                      (the default GITHUB_TOKEN can only read its own repo)
+#                      and "Issues: write" on DIGEST_ISSUE_REPO
+#   ANTHROPIC_API_KEY  optional; without it the rule-based digest is sent
+#   SMTP_HOST / SMTP_USER / SMTP_PASSWORD / DIGEST_TO   optional, for email
+#   SHEET_WEBHOOK_URL  optional, Google Apps Script web app (examples/sheet_webhook.gs)
+name: weekly-digest
+on:
+  schedule:
+    - cron: "0 1 * * 1"      # Monday 09:00 Taipei
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Monday of the week to summarise (YYYY-MM-DD); empty = last week"
+        required: false
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -t .
+      - name: Build and send digest
+        env:
+          GITHUB_TOKEN: ${{ secrets.LOGS_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DIGEST_ISSUE_REPO: ${{ github.repository }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+          SHEET_WEBHOOK_URL: ${{ secrets.SHEET_WEBHOOK_URL }}
+        run: |
+          ARGS="--repo ${{ vars.LOG_REPO }} --issue"
+          [ -n "$DIGEST_TO" ] && ARGS="$ARGS --email"
+          [ -n "$SHEET_WEBHOOK_URL" ] && ARGS="$ARGS --sheet"
+          [ -n "${{ inputs.week }}" ] && ARGS="$ARGS --week ${{ inputs.week }}"
+          python -m worklog_copilot digest $ARGS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: digest
+          path: out/

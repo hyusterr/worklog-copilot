@@ -1,0 +1,31 @@
+Some preamble the intern wrote before the first entry.
+--------
+## 2026.7.15 - 2026.7.16 (traveling on 7.16)
+### Stage of my work
+building the evaluation pipeline
+### Things done today (@ lab)
+- [2 hr] wrote the data loader
+- [1.5hr] tried to run the baseline but hit the API budget limit
+### TODOs (July 17)
+- rerun baseline
+### Need to discuss
+- None
+--------
+## 2026.7.14
+### Stage of my work
+building the evaluation pipeline
+### Things done today
+- read the metrics code, still not sure what align() returns
+### Need to discuss
+- Can we get more GPU quota? The current one runs out after
+two jobs.
+## 2026.7.X
+### Things done today
+- forgot the date
+## 2026.7.9~10
+### Stage of my work
+reading
+### Things done today
+- studied paper A
+### Current understanding
+- paper A is about numbers

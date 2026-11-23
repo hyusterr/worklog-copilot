@@ -1,0 +1,33 @@
+## 2026.07.14
+### Stage of my work
+collecting 10-K filings
+### Things done today
+- downloaded 10-K filings for 25 companies
+- the HTML parser failed on 6 filings that use nested tables
+### TODOs
+- try a different parser for the nested tables
+### Need to discuss
+- Can I get access to the shared GPU server? My laptop runs out of memory when
+encoding the full filings.
+
+## 2026.07.15
+### Stage of my work
+collecting 10-K filings
+### Things done today
+- switched to a different HTML parser, 4 of the 6 failed filings now work
+- wrote a summary of the remaining 2 broken filings
+### TODOs
+- ask mentor whether we can skip the 2 broken filings
+### Need to discuss
+- None
+
+## 2026.07.16-17
+### Stage of my work
+building the sentence dataset
+### Things done today
+- split filings into sentences and removed boilerplate
+- 18,200 sentences in total
+### TODOs
+- sample 500 sentences for annotation
+### Need to discuss
+- Who will annotate the 500 sentences?
